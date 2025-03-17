@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Scooter from "./pages/Scooter";
+import ScooterDetail from "./pages/ScooterDetails"; // Import trang chi tiết
 import Moto from "./pages/Moto";
 import Car from "./pages/Car";
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/scooter" element={<Scooter />} />
+        <Route path="/scooter/:id" element={<ScooterDetail />} /> {/* Trang chi tiết */}
         <Route path="/moto" element={<Moto />} />
         <Route path="/car" element={<Car />} />
       </Routes>

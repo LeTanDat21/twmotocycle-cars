@@ -29,8 +29,17 @@ nav ul li a {
 }
 
 .vehicle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Giữ khoảng cách giữa các phần tử */
+  text-align: center;
+  min-height: 30px; /* Đảm bảo card có cùng chiều cao */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   background: white;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 15px;
   width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -38,19 +47,34 @@ nav ul li a {
 }
 
 .vehicle-image {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: 50%;
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng mượt */
+}
+
+.vehicle-image:hover {
+  transform: scale(1.1); /* Phóng to 10% khi hover */
 }
 
 .vehicle-name {
+  height: 50px; /* Giữ cố định chiều cao */
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  text-align: center;
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
+  padding: 0 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Giữ tất cả trên 1 dòng */
 }
 
 .vehicle-type {
-  font-size: 14px;
-  color: gray;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
 }
 
 .vehicle-price {

@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Style.css";
 
-function VehicleCard({ name, price, image, isNew, type }) {
+function VehicleCard({ id, name, price, image, isNew, type }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/scooter/${id}`); // Điều hướng đến trang chi tiết xe máy
+  };
+
   return (
-    <div className="vehicle-card">
+    <div className="vehicle-card" onClick={handleClick} style={{ cursor: "pointer" }}>
       <img src={image} alt={name} className="vehicle-image" />
       {isNew && <span className="new-badge">MỚI</span>}
       <h3 className="vehicle-name">{name}</h3>
