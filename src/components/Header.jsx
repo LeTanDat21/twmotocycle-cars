@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css"; // Import file CSS
+import "../css/Header.css"; // Import file CSS
 
 const Header = () => {
   return (
@@ -8,9 +8,9 @@ const Header = () => {
       <nav>
         <ul className="nav-links">
           <li><a href="/">Trang chủ</a></li>
-          <li><a href="/cars">Ô tô</a></li>
-          <li><a href="/motorbikes">Xe máy</a></li>
-          <li><a href="/racing">Phân khối lớn</a></li>
+          <li><a href="/Car">Ô tô</a></li>
+          <li><a href="/Scooter">Xe máy</a></li>
+          <li><a href="/Moto">Phân khối lớn</a></li>
           <li><a href="/contact">Về chúng tôi</a></li>
           <li><a href="/news">Tin tức - Khuyến mãi</a></li>
         </ul>

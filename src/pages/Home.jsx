@@ -1,5 +1,6 @@
 import React from "react";
-import "./Home.css";
+import { Link } from "react-router-dom"; // Thêm Link từ react-router-dom
+import "../css/Home.css";
 
 const Home = () => {
   return (
@@ -14,19 +15,25 @@ const Home = () => {
       </div>
       
       <section className="categories">
-      <div className="category"><a href="Car.jsx">
-        <img src="/images/car.jpg" alt="Ô tô" />
-        <h3>Ô tô</h3></a>
+        <div className="category">
+          <Link to="/car">
+            <img src="/images/car.jpg" alt="Ô tô" />
+            <h3>Ô tô</h3>
+          </Link>
         </div>
 
-        <div className="category"><a href="Scooter.jsx">
-        <img src="/images/scooter.jpg" alt="Xe máy" />
-        <h3>Xe máy</h3></a>
+        <div className="category">
+          <Link to="/scooter"> 
+            <img src="/images/scooter.jpg" alt="Xe máy" />
+            <h3>Xe máy</h3>
+          </Link>
         </div>
 
-        <div className="category"><a href="Moto.jsx">
-        <img src="/images/moto.jpg" alt="Phân khối lớn" />
-        <h3>Phân khối lớn</h3></a>
+        <div className="category">
+          <Link to="/moto">
+            <img src="/images/moto.jpg" alt="Phân khối lớn" />
+            <h3>Phân khối lớn</h3>
+          </Link>
         </div>
       </section>
     </div>
