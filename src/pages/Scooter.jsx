@@ -14,45 +14,33 @@ function Scooter() {
       try {
         const brands = ["honda", "yamaha", "piaggio"];
         const categories = ["scoot", "manual", "clutch"];
-
-        let queries = [];
-
-        for (const brand of brands) {
-          for (const category of categories) {
-            const colRef = collection(db, "scooter", brand, category);
-            queries.push(getDocs(colRef));
-          }
-        }
-
-        const results = await Promise.all(queries);
-        let allScooters = [];
-
-        results.forEach((querySnapshot, index) => {
-          const [brand, category] = [
-            brands[Math.floor(index / categories.length)],
-            categories[index % categories.length],
-          ];
-          const scooters = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            brand,
-            category,
-            name: doc.data().name,
-            price: doc.data().price,
-            type :doc.data().type,
-            image: doc.data().image,
-          }));
-          allScooters = [...allScooters, ...scooters];
-        });
-
+  
+        const allPromises = brands.flatMap((brand) =>
+          categories.map(async (category) => {
+            const colRef = collection(db, `scooter/${brand}/${category}`);
+            const querySnapshot = await getDocs(colRef);
+            return querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              brand,
+              category,
+              ...doc.data(),
+            }));
+          })
+        );
+  
+        const results = await Promise.all(allPromises);
+        const allScooters = results.flat();
+  
         setScooterList(allScooters);
         setFilteredScooters(allScooters);
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu:", error);
       }
     };
-
+  
     fetchData();
   }, []);
+  
 
   // 🟢 Thêm hàm tìm kiếm xe máy theo tên
   const handleSearch = (query) => {

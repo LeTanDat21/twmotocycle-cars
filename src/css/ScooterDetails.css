@@ -1,0 +1,119 @@
+.scooter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.scooter-title {
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 50px;
+  color: red;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.scooter-info, .scooter-image, .scooter-specs {
+  flex: 1;
+  min-width: 400px;
+  padding: 15px;
+}
+
+
+.scooter-image {
+  text-align: center;
+  width: 100%;
+}
+
+.scooter-info{
+  font-size: 20px;
+}
+
+/* Container của dropdown */
+select {
+  width: 100%; /* Chiều rộng full */
+  max-width: 250px; /* Giới hạn chiều rộng */
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #ff4d4d; /* Màu viền đỏ */
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi hover */
+select:hover {
+  border-color: #cc0000;
+}
+
+/* Khi dropdown được mở */
+select:focus {
+  outline: none;
+  border-color: #cc0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* Tùy chỉnh option */
+option {
+  padding: 10px;
+  background-color: white;
+  color: black;
+}
+
+/* Hiệu ứng hover cho option */
+option:hover {
+  background-color: #ffcccc;
+}
+
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  padding-bottom: 20px;
+}
+
+.specs-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.color-box {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.scooter-extra-images {
+  text-align: center;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.extra-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Khoảng cách giữa hai ảnh */
+  width: 100vw; /* Chiều rộng full trang */
+}
+
+.extra-images img {
+  width: 100vw; /* Chiều rộng full trang */
+  height: 200%; /* Giữ nguyên chiều cao theo tỉ lệ */
+  max-height: 500px; /* Giới hạn chiều cao tối đa nếu cần */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border-radius: 20px; /* Bo góc ảnh */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+

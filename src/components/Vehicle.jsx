@@ -2,11 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Style.css";
 
-function VehicleCard({ id, name, price, image, isNew, type }) {
+function VehicleCard({ id, name, price, image, isNew, type, brand, category }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/scooter/${id}`); // Điều hướng đến trang chi tiết xe máy
+    if (!brand || !category || !id) {
+      console.error("❌ Lỗi: Thiếu thông tin brand, category hoặc id", { brand, category, id });
+      return;
+    }
+
+    navigate(`/scooter/${brand}/${category}/${id}`); // Điều hướng đến trang chi tiết xe máy
   };
 
   return (
