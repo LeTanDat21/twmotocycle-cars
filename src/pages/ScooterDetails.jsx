@@ -140,6 +140,34 @@ function ScooterDetails() {
         </table>
       </div>
 
+        {/* Hình ảnh về xe */}
+      <div className="vehicle-images">
+        <h3>Hình ảnh về xe</h3>
+        <div className="image-gallery">
+          <img
+            src={selectedVersion?.headimg || scooter.headimg || "https://via.placeholder.com/400"}
+            alt="Hình ảnh đầu xe"
+            width="400"
+          />
+          <img
+            src={selectedVersion?.bodyimg || scooter.bodyimg || "https://via.placeholder.com/400"}
+            alt="Hình ảnh thân xe"
+            width="400"
+          />
+          <img
+            src={selectedVersion?.engineimg || scooter.engineimg  || "https://via.placeholder.com/400"}
+            alt="Hình ảnh động cơ"
+            width="400"
+          />
+          <img
+            src={selectedVersion?.modernimg || scooter.modernimg || "https://via.placeholder.com/400"}
+            alt="Hình ảnh hiện đại"
+            width="400"
+          />
+        </div>
+  
+      </div>
+
       {/* Hình ảnh bổ sung */}
       <div className="scooter-extra-images">
         <h3>Hình ảnh khác</h3>

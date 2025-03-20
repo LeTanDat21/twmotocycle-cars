@@ -117,3 +117,29 @@ option:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
 }
 
+
+.vehicle-images {
+  text-align: center;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Khoảng cách giữa hai ảnh */
+  width: 100vw; /* Chiều rộng full trang */
+}
+
+.extra-images img {
+  width: 120vw; /* Chiều rộng full trang */
+  height: 200%; /* Giữ nguyên chiều cao theo tỉ lệ */
+  max-height: 500px; /* Giới hạn chiều cao tối đa nếu cần */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border-radius: 20px; /* Bo góc ảnh */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
