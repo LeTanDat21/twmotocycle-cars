@@ -6,11 +6,27 @@
   padding: 20px;
 }
 
+.scooter-banner {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.scooter-banner img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: -webkit-optimize-contrast; /* Tăng độ rõ nét */
+  image-rendering: crisp-edges; /* Giữ chi tiết ảnh */
+}
+
+
 .scooter-title {
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   font-size: 50px;
+  font-style: italic;
   color: red;
   font-weight: bolder;
   margin-bottom: 20px;
@@ -105,17 +121,18 @@ option:hover {
   display: flex;
   justify-content: center;
   gap: 20px; /* Khoảng cách giữa hai ảnh */
-  width: 100vw; /* Chiều rộng full trang */
+  width: 100%; /* Đảm bảo không vượt quá trang */
 }
 
 .extra-images img {
-  width: 100vw; /* Chiều rộng full trang */
-  height: 200%; /* Giữ nguyên chiều cao theo tỉ lệ */
-  max-height: 500px; /* Giới hạn chiều cao tối đa nếu cần */
-  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  width: 100%; /* Đảm bảo ảnh điền đầy container */
+  max-width: 500px; /* Giới hạn chiều rộng tối đa */
+  height: auto; /* Giữ đúng tỉ lệ ảnh */
+  object-fit: contain; /* Đảm bảo ảnh không bị cắt mất nội dung */
   border-radius: 20px; /* Bo góc ảnh */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
 }
+
 
 
 .vehicle-images {

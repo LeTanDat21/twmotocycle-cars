@@ -1,18 +1,55 @@
 .footer {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #222;
-    color: white;
-    padding: 20px 0;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000; /* Nền tối */
+  color: white;
+  padding: 40px 0;
+  font-weight: bold;
+  padding-top: 30px;
+  text-align: left;
+  position: relative;
+  background-image: url('/public/images/road.jpg');
+  background-size: contain; /* Hiển thị toàn bộ hình trong footer */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto; /* Đảm bảo footer co dãn theo nội dung */
+  min-height: 300px; /* Giữ chiều cao tối thiểu để hình nền không bị bóp méo */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.policy-buttons {
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Khoảng cách giữa các nút */
+  justify-content: left;
+}
+
+.policy-btn {
+  display: inline-block;
+  color: white;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  text-align: left;
+  min-width: 250px;
+  border: 1px solid red;
+}
+
+.policy-btn:hover {
+  background-color: red; /* Đổi màu khi hover */
+  transition: all 0.3s ease;
+}
+
+
   
   .footer-section {
     max-width: 300px;

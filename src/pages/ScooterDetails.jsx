@@ -10,6 +10,7 @@ function ScooterDetails() {
   const [selectedVersion, setSelectedVersion] = useState(null);
   const [versions, setVersions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [banner, setBanner] = useState(""); 
 
   useEffect(() => {
     const fetchScooterDetails = async () => {
@@ -25,6 +26,7 @@ function ScooterDetails() {
         if (docSnap.exists()) {
           const data = docSnap.data();
           setScooter(data);
+          setBanner(data.banner || "");
 
           const versionKeys = [
             { key: "sportver", priceKey: "sportprice" ,imgKey :"sportimg"},
@@ -59,9 +61,16 @@ function ScooterDetails() {
 
   if (loading) return <p>Đang tải dữ liệu...</p>;
   if (!scooter) return <p>Không có dữ liệu xe.</p>;
+  
 
   return (
     <div className="scooter-container">
+      {/* Banner */}
+      {banner && (
+        <div className="scooter-banner">
+          <img src={banner} alt="Scooter Banner" />
+        </div>
+      )}
       <h2 className="scooter-title">{scooter.name || "Chưa có tên"}</h2>
 
       {/* Thông tin xe */}
@@ -104,6 +113,8 @@ function ScooterDetails() {
           width="500"
         />
       </div>
+
+      <div className="360-rotate"></div>
 
       {/* Bảng thông số kỹ thuật */}
       <div className="scooter-specs">
